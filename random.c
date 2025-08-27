@@ -13,11 +13,9 @@ int main(void){
 // Function for rand_string()
 void rand_string(char *s, size_t size){
     // Fills memory pointer s
-    for (int i = 0; i < size; i++){
-        *s += rand() % (90 - 65 + 1) + 65;
-        //*random_char += random_val;
-        //printf("%c", val);
-        //return char rand() % (90 - 65 + 1) + 65;
+    for (size_t i = 0; i < size; i++){
+        s[i] = rand() % (90 - 65 + 1) + 65;
     }
-    return *s;
+    // Append null terminator to end of string
+    s[size] = '\0';
 }
