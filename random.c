@@ -1,8 +1,9 @@
 // Preprocessor Directives
 #include <stdio.h>
+#include <stdlib.h>
 
 // Function Prototypes
-char rand_string(size_t size); 
+void rand_string(char *s, size_t size); 
 
 // Main Function
 int main(void){
@@ -10,7 +11,13 @@ int main(void){
 }
 
 // Function for rand_string()
-char rand_string(size_t size){
-    
-    return;
+void rand_string(char *s, size_t size){
+    // Fills memory pointer s
+    for (int i = 0; i < size; i++){
+        *s += rand() % (90 - 65 + 1) + 65;
+        //*random_char += random_val;
+        //printf("%c", val);
+        //return char rand() % (90 - 65 + 1) + 65;
+    }
+    return *s;
 }

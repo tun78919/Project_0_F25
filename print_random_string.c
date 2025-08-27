@@ -7,11 +7,16 @@
 // random string generator wrapper function
 char* rand_string_alloc(size_t size)
 {
+    // Allocates memory on the heap. +1 malloc for the null character after the string
      char *s = malloc(size + 1);
      if (s) {
-         rand_string(s, size); // to be developed by the student
+        // Pointer is passed by value as parameter but points to same memory.
+        rand_string(s, size);
      }
      return s;
+    /* Malloc allows the pointer s memory to be returned to the original file.
+    While passing the pointer as a parameter allows us to make changes to the
+    pointer s in a separate file. */
 }
 
 
